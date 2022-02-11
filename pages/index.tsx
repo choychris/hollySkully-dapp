@@ -75,9 +75,8 @@ const Home: NextPage = () => {
       });
       setWalletAddress(accounts[0]);
       setWalletError(null);
-    } catch (e) {
-      setWalletError(e as string);
-      console.log("wallet error", e);
+    } catch (e: any) {
+      setWalletError(e.message);
     }
 
     try {
@@ -92,9 +91,8 @@ const Home: NextPage = () => {
       } else {
         setNetworkError(undefined);
       }
-    } catch (e) {
-      setNetworkError(e as string);
-      console.log("network error", e);
+    } catch (e: any) {
+      setNetworkError(e.message);
     }
   };
 
