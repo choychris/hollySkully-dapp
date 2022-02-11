@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 import Web3 from "web3";
 import abi from "../contract.json";
 import { ChangeEvent, useEffect, useState } from "react";
-import profilePic from "../public/img/4.jpeg";
+// import profilePic from "../public/img/4.jpeg";
 import { Contract } from "../types/web3-v1-contracts/contract";
 import { Spinner } from "../components/atom/spinner";
 
@@ -85,9 +85,7 @@ const Home: NextPage = () => {
       });
 
       if (networkId !== "4") {
-        setNetworkError(
-          "You need to be in Rinkeby Test Network (4) to mint Holy Skully."
-        );
+        setNetworkError("You need to be in Rinkeby Test Network (4) to mint.");
       } else {
         setNetworkError(undefined);
       }
@@ -191,13 +189,13 @@ const Home: NextPage = () => {
   return (
     <div className="min-h-screen flex-col flex">
       <Head>
-        <title>Holy Skully NFT</title>
-        <meta name="description" content="Holy Skully NFT in Ethereum" />
+        <title>NFT</title>
+        <meta name="description" content="NFT in Ethereum" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="px-16 justify-between items-center flex flex-none h-24 bg-amber-600">
-        <h3>Holy Skully</h3>
+        <h3>HHH</h3>
         <div>
           {walletAddress ? (
             <p className="text-white text-sm border border-white px-1 rounded-sm">
@@ -214,17 +212,17 @@ const Home: NextPage = () => {
         </div>
       </div>
       <main className="pt-12 pb-24 container mx-auto flex-col flex grow justify-around items-center">
-        <h1 className="text-5xl">Mint Holy Skully</h1>
+        <h1 className="text-5xl">Mint</h1>
         <p className="text-xl">
           Supply: {`${supplyInfo?.current || "-"} / ${supplyInfo?.max || "-"}`}
         </p>
-        <Image
+        {/* <Image
           alt=""
           src={profilePic}
           width={200}
           height={200}
           className="rounded-md"
-        />
+        /> */}
         {walletError ? (
           <p>{walletError}</p>
         ) : networkError ? (
